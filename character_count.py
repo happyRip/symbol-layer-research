@@ -4,8 +4,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import sys
 
-colors = ("#7C5869", "#886176", "#9A7197", "#9D96B8", "#AFD2E9")
-
 
 def main():
     char_dict = {}
@@ -14,10 +12,8 @@ def main():
         f = open(filepath, "r")
         for char in f.read():
             if char.isascii():
-                if char.isspace():
+                if char.isspace():  # ignore whitespace
                     continue
-                # if char.isspace() or char.isalnum():
-                #     continue
                 c = char.lower()
                 if c not in char_dict:
                     char_dict[c] = 0
